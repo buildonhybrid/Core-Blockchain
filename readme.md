@@ -42,7 +42,7 @@ To back the Hybrid blockchain you can become a validator. Full flow to become a 
 * On your server, start the node that you just installed **([See Usage/Example](#usageexamples))**
 * Once the node is started and confirmation is seen on your terminal, open the interactive console by attaching tmux session **([See Usage/Example](#usageexamples))**
 * Once inside the interactive console, you'll see "IMPORTED TRANSACTION OBJECTS" and "age=<some period like 6d5hr or 5mon 3weeks>". You need to wait until the "unauthorized validator" warning starts to pop up on the console. 
-* Once "unauthorized validators" warning shows up, go to https://staking.buildonhybrid.com/ and click "Become a validator". Fill in all the details in the form, in the "Fee address" field enter the validator wallet address that you imported into your metamask. Proceed further
+* Once "unauthorized validators" warning shows up, go to https://app.buildonhybrid.com/ and click "Become a validator". Fill in all the details in the form, in the "Fee address" field enter the validator wallet address that you imported into your metamask. Proceed further
 * Once the last step is done, you'll see a "🔨 mined potential block" message on the interactive console. You'll also see your validator wallet as a validator on the staking page and on explorer. You should also detach from the console after the whole process is done **([See Usage/Example](#usageexamples))**
 ## Installation
 
