@@ -93,7 +93,7 @@ startValidator(){
         :
     else
         tmux new-session -d -s node$i
-        tmux send-keys -t 0 "./node_src/build/bin/geth --datadir ./chaindata/node$i --networkid $CHAINID --bootnodes $BOOTNODE1,$BOOTNODE2,$BOOTNODE3,$BOOTNODE4,$BOOTNODE5,$BOOTNODE6 --mine --port 326$j --nat extip:$IP --gpo.percentile 0 --gpo.maxprice 100 --gpo.ignoreprice 0 --snapshot=false --unlock 0 --password ./chaindata/node$i/pass.txt --syncmode=full --verbosity=5 console 2>./logs" Enter
+        tmux send-keys -t 0 "./node_src/build/bin/geth --datadir ./chaindata/node$i --networkid $CHAINID --config ./chaindata/config.toml --mine --port 326$j --nat extip:$IP --gpo.percentile 0 --gpo.maxprice 100 --gpo.ignoreprice 0 --snapshot=false --unlock 0 --password ./chaindata/node$i/pass.txt --syncmode=full --verbosity=3 console 2>./logs" Enter
     fi
 
     ((i += 1))
