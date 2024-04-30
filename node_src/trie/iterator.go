@@ -154,7 +154,7 @@ func (e seekError) Error() string {
 // newNodeIterator returns nil when empty
 func newNodeIterator(trie *Trie, start []byte) NodeIterator {
 	if trie.Hash() == emptyState {
-		return nil
+		return new(nodeIterator)
 	}
 	it := &nodeIterator{trie: trie}
 	it.err = it.seek(start)
@@ -486,7 +486,7 @@ func (it *nodeIterator) pop() {
     parent := it.stack[len(it.stack)-1]
     it.path = it.path[:parent.pathlen]
     it.stack = it.stack[:len(it.stack)-1]
-    parent.node = nil
+    
 }
 
 func compareNodes(a, b NodeIterator) int {
