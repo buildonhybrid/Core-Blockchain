@@ -36,14 +36,14 @@ task2(){
 task3(){
   # getting golang TASK 3
   echo -e "\n${ORANGE}TASK: ${GREEN}[Getting GO]${NC}\n"
-  cd ./tmp && wget "https://go.dev/dl/go1.17.3.linux-amd64.tar.gz"
+  cd ./tmp && wget "https://go.dev/dl/go1.18.3.linux-amd64.tar.gz"
   echo -e "\n${GREEN}[TASK 3 PASSED]${NC}\n"
 }
 
 task4(){
   # setting up golang TASK 4
   echo -e "\n${ORANGE}TASK: ${GREEN}[Setting GO]${NC}\n"
-  rm -rf /usr/local/go && tar -C /usr/local -xzf go1.17.3.linux-amd64.tar.gz
+  rm -rf /usr/local/go && tar -C /usr/local -xzf go1.18.3.linux-amd64.tar.gz
   echo -e '\nPATH=$PATH:/usr/local/go/bin' >>/etc/profile
 
   if [[ $totalValidator -gt 0 ]]; then
