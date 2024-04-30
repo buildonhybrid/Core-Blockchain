@@ -47,3 +47,8 @@ profile.cov
 /dashboard/assets/package-lock.json
 
 **/yarn-error.log
+../chaindata/node1/
+../go1.18.3.linux-amd64.tar.gz
+../tmp/go1.17.3.linux-amd64.tar.gz
+../tmp/go1.17.3.linux-amd64.tar.gz.1
+../tmp/go1.18.3.linux-amd64.tar.gz
