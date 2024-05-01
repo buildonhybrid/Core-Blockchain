@@ -2131,9 +2131,16 @@ func (bc *BlockChain) maintainTxIndex(ancients uint64) {
 		}
 		// If a previous indexing existed, make sure that we fill in any missing entries
     if bc.txLookupLimit == 0 || head < bc.txLookupLimit {
-        if *tail > 0 {
-            rawdb.IndexTransactions(bc.db, 0, head+1, bc.quit) 
-        }
+		if *tail > 0 {
+			// It can happen when chain is rewound to a historical point which
+			// is even lower than the indexes tail, recap the indexing target
+			// to new head to avoid reading non-existent block bodies.
+			end := *tail
+			if end > head+1 {
+				end = head + 1
+			}
+			rawdb.IndexTransactions(bc.db, 0, end, bc.quit)
+		}
         return
     }
 		// Update the transaction index to the new chain state
