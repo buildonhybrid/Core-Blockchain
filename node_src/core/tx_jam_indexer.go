@@ -191,7 +191,7 @@ func (indexer *txJamIndexer) UnderPricedInc() {
 }
 
 type underPricedCounter struct {
-	counts  []int // the lenght of this slice is 2 times of periodSecs
+	counts  []int // the length of this slice is 2 times of periodSecs
 	periods int   //how many periods to cache, each period cache records of 0.5 seconds.
 	idx     int   //current index
 	sum     int   //current sum
